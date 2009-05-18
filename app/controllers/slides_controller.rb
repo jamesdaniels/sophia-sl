@@ -1,4 +1,7 @@
-class SlidesController < ApplicationController
+class SlidesController < ApplicationController      
+  
+  before_filter :require_user
+  
   # GET /slides
   # GET /slides.xml
   def index
