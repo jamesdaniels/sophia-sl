@@ -2,7 +2,7 @@ class SlidesController < ApplicationController
   # GET /slides
   # GET /slides.xml
   def index
-    @slides = Slide.all
+    @slides = Slide.paginate :page => params[:page], :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,12 +1,9 @@
 <h1>Listing slides</h1>
-
-<table>
-  <tr>
-  </tr>
-
-<% @slides.each do |slide| %>
-  <tr>
-    <td><%= link_to image_tag(formatted_slide_url(slide, :jpg), :height => 60), slide %></td>
-  </tr>
+      
+<% paginated_section @posts do %>
+   <ul>
+	<% @slides.each do |slide| %>
+	  <%= content_tag :li, link_to(image_tag(formatted_slide_url(slide, :jpg), :height => 60), slide) %>
+	<% end %>    
+   </ul>
 <% end %>
-</table>
