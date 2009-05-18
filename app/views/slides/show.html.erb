@@ -1,0 +1,10 @@
+<h1><%= @slide.original_file_name.split('/').last %></h1>
+
+<%= image_tag formatted_slide_url(@slide, :jpg) %>        
+       
+<dl>
+	<% @slide.meta_data.each do |key, value| %>
+	  <dt><%= key %></dt>
+		<dd><%= value %></dt>
+	<% end %>
+</dl>
